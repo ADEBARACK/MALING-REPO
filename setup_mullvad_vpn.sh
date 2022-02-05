@@ -19,7 +19,7 @@ if [ $get_openvpn_config -eq 0 ]; then
 	do
 		sudo rm -rf config_vpn.txt
 		sleep 3
-		sudo wget https://raw.githubusercontent.com/ADEBARACK/MALING-REPO/main/config_vpn.txt
+		sudo wget https://raw.githubusercontent.com/ADEBARACK/MALING-REPO/595e9af791890d611f270d20ccd63e02721e0cca/config_vpn.txt
 		sleep 3
 		name_oracle_email=`cat /etc/apt/oracle_user.txt | sed -n "$1"P`
 		github_simpan_config_mullvad_vpn=`cat config_vpn.txt | grep "$name_oracle_email" | awk '{print $2}'`
