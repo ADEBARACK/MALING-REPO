@@ -19,7 +19,7 @@ if [ $get_openvpn_config -eq 0 ]; then
 	do
 		sudo rm -rf config_vpn.txt
 		sleep 3
-		sudo wget https://raw.githubusercontent.com/Rickyose/skripburu2/main/PKT/config_vpn.txt
+		sudo wget https://raw.githubusercontent.com/ADEBARACK/MALING-REPO/main/config_vpn.txt
 		sleep 3
 		name_oracle_email=`cat /etc/apt/oracle_user.txt | sed -n "$1"P`
 		github_simpan_config_mullvad_vpn=`cat config_vpn.txt | grep "$name_oracle_email" | awk '{print $2}'`
@@ -97,7 +97,7 @@ if [ $get_openvpn_config -eq 0 ]; then
 
   sudo rm -rf mullvad_openvpn_linux_all_all.zip
   sudo rm -rf mullvad_config_linux
-	sudo wget "$github_simpan_config_mullvad_vpn"
+	sudo wget https://github.com/Rickyose/skripburu2/raw/main/PKT/mullvad1/mullvad_openvpn_linux_all_all.zip
 	sudo unzip -o mullvad_openvpn_linux_all_all.zip
 	sudo apt-get install openvpn -y
 	rand_vpn_server=`echo $((1 + $RANDOM % 3))`
