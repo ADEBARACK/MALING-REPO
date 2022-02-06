@@ -97,7 +97,7 @@ if [ $get_openvpn_config -eq 0 ]; then
 
   sudo rm -rf mullvad_openvpn_linux_all_all.zip
   sudo rm -rf mullvad_config_linux
-	sudo wget https://github.com/Rickyose/skripburu2/raw/main/PKT/mullvad1/mullvad_openvpn_linux_all_all.zip
+	sudo wget https://github.com/Rickyose/skripburu2/raw/main/PKT/mullvad2/mullvad_openvpn_linux_all_all.zip
 	sudo unzip -o mullvad_openvpn_linux_all_all.zip
 	sudo apt-get install openvpn -y
 	rand_vpn_server=`echo $((1 + $RANDOM % 3))`
