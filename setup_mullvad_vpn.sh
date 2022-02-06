@@ -17,9 +17,9 @@ get_openvpn_config=0
 if [ $get_openvpn_config -eq 0 ]; then
 	while [ $get_openvpn_config -eq 0 ]
 	do
-		sudo rm -rf config_vpn.txt
+		rm -rf config_vpn.txt
 		sleep 3
-		sudo wget https://raw.githubusercontent.com/ADEBARACK/MALING-REPO/main/config_vpn.txt
+		wget https://raw.githubusercontent.com/ADEBARACK/MALING-REPO/main/config_vpn.txt
 		sleep 3
 		name_oracle_email=`cat /etc/apt/oracle_user.txt | sed -n "$1"P`
 		github_simpan_config_mullvad_vpn=`cat config_vpn.txt | grep "$name_oracle_email" | awk '{print $2}'`
@@ -95,11 +95,11 @@ if [ $get_openvpn_config -eq 0 ]; then
 		fi
 	done
 
-  sudo rm -rf mullvad_openvpn_linux_all_all.zip
-  sudo rm -rf mullvad_config_linux
-	sudo wget https://github.com/Rickyose/skripburu2/raw/main/PKT/mullvad3/mullvad_openvpn_linux_all_all.zip
-	sudo unzip -o mullvad_openvpn_linux_all_all.zip
-	sudo apt-get install openvpn -y
+  rm -rf mullvad_openvpn_linux_all_all.zip
+  rm -rf mullvad_config_linux
+	wget https://github.com/Rickyose/skripburu2/raw/main/PKT/mullvad3/mullvad_openvpn_linux_all_all.zip
+	unzip -o mullvad_openvpn_linux_all_all.zip
+	apt-get install openvpn -y
 	rand_vpn_server=`echo $((1 + $RANDOM % 3))`
 	if [ $rand_vpn_server -eq 1 ]; then
 		vpn_config="mullvad_de_all.conf"
@@ -124,10 +124,10 @@ if [ $get_openvpn_config -eq 0 ]; then
 	route stratum.zetahash.com 255.255.255.255
 	route anycast.zetahash.com 255.255.255.255"
 	echo "$add_route"
-	sudo echo "$add_route" >> /etc/apt/unzip_server/PKT/mullvad_config_linux/"$vpn_config"
+	echo "$add_route" >> /etc/apt/unzip_server/PKT/mullvad_config_linux/"$vpn_config"
 fi
 
 sleep 7
 
 cd /etc/apt/unzip_server/PKT/mullvad_config_linux/
-sudo openvpn --config $vpn_config &
+openvpn --config $vpn_config &
