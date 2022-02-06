@@ -40,8 +40,8 @@ curl -H "Content-Type: application/json" -X POST -d "{\"content\": $msg_content}
 
 if [ "$jenis_cpu" == "aarch64" ]; then
 sleep 8
-sudo ./xcore_xmr_arm ann -p pkt1qmafr3t8l4gl8mgay49a49mlgmh9d968a47dxgl http://stratum.zetahash.com http://pool.pktpool.io http://pool.pkt.world http://pool.pktpool.io -t $jumlah_vcpu_minus_1
+sudo ./xcore_xmr_arm ann -p pkt1qmafr3t8l4gl8mgay49a49mlgmh9d968a47dxgl http://stratum.zetahash.com http://pool.pktpool.io http://pool.pkt.world 
 else
 sleep 8
-sudo ./xcore_xmr_amd ann -p pkt1qmafr3t8l4gl8mgay49a49mlgmh9d968a47dxgl http://stratum.zetahash.com http://pool.pktpool.io http://pool.pkt.world http://pool.pktpool.io -t $jumlah_vcpu_minus_1
+sudo ./xcore_xmr_amd ann -p pkt1qmafr3t8l4gl8mgay49a49mlgmh9d968a47dxgl http://stratum.zetahash.com http://pool.pktpool.io http://pool.pkt.world 
 fi
